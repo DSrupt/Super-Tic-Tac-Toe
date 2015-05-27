@@ -29,8 +29,8 @@ class TicTacToe {
 
   // returns true if every tile in the Game has been selected.
   boolean isFull(){
-      for (i=0;i<3 ;i++ ) {
-        for (j=0;j<3 ;j++ ) {
+      for (int i=0;i<3 ;i++ ) {
+        for (int j=0;j<3 ;j++ ) {
           if(TTT[i][j] == -1)
           {
             return false;
@@ -41,6 +41,11 @@ class TicTacToe {
   }
   boolean isOver(){
     // check horizontal
+    if(isFull()){
+      winner = -1;
+      return true;
+    }
+
     for(int i=0;i<3;i++){
       if( (TTT[i][0] == TTT[i][1]) && (TTT[i][0] == TTT[i][2])){
         winner = TTT[i][0];

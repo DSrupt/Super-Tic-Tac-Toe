@@ -17,6 +17,19 @@ class TicTacToe {
       returns false if the spot is already chosen.
       The view will update only if this method returns true.
   */
+  void draw(Graphics g, int x, int j){
+
+
+  }
+  // Draws the Grid. Used by the draw function as a helper method.
+  void drawGrid(Graphics g, int i, int j){
+    g.drawRect()
+    for(int i=0;i<3;i++){
+      for (int j=0;j<3;j++){
+
+      }
+    }
+  }
   boolean mark(int i, int j, int value){
     if(TTT[i][j]==-1){
       TTT[i][j] = value;

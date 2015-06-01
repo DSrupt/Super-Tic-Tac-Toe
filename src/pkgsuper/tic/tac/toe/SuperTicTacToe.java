@@ -1,18 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pkgsuper.tic.tac.toe;
 
 /**
- *
  * @author akhilthampy
  */
+
 public class SuperTicTacToe {
+    private TicTacToe[][] board; // A multidimensional array where each cell is a TicTacToe Game.
 
-    /**
-     * @param args the command line arguments
-     */
-
+    /*
+    *  SuperTicTacToe class manages the game by polling the individual games for their status(ended(winner || draw)/on
+    *  going)
+     *
+     *  This data is then used to determine the winner of the whole game.
+    * */
 }

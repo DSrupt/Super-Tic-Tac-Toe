@@ -1,88 +1,94 @@
+package pkgsuper.tic.tac.toe;
+
+import java.awt.*;
+
 class TicTacToe {
-  private int[][] TTT = new int[3][3];
+    private int[][] TTT = new int[3][3];
 
-  // initialize every value to -1
-  TicTacToe(){
-    for(int i=0;i<3;i++){
-      for(int j=0;j<3;j++){
-          TTT[i][j] = -1;
-      }
-    }
-  }
-
-  /*
-      i and j indicate the position of the players choice.
-      value is the value to be changed to.
-      X = 1 O = 0
-      returns false if the spot is already chosen.
-      The view will update only if this method returns true.
-  */
-  void draw(Graphics g, int x, int j){
-
-
-  }
-  // Draws the Grid. Used by the draw function as a helper method.
-  void drawGrid(Graphics g, int i, int j){
-    g.drawRect()
-    for(int i=0;i<3;i++){
-      for (int j=0;j<3;j++){
-
-      }
-    }
-  }
-  boolean mark(int i, int j, int value){
-    if(TTT[i][j]==-1){
-      TTT[i][j] = value;
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  // returns true if every tile in the Game has been selected.
-  boolean isFull(){
-      for (int i=0;i<3 ;i++ ) {
-        for (int j=0;j<3 ;j++ ) {
-          if(TTT[i][j] == -1)
-          {
-            return false;
-          }
+    // initialize every value to -1
+    TicTacToe() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                TTT[i][j] = -1;
+            }
         }
-      }
-      return true;
-  }
-  boolean isOver(){
-    // check horizontal
-    if(isFull()){
-      winner = -1;
-      return true;
     }
 
-    for(int i=0;i<3;i++){
-      if( (TTT[i][0] == TTT[i][1]) && (TTT[i][0] == TTT[i][2])){
-        winner = TTT[i][0];
-        return true;
-      }
-    }
-    //check vertical
-    for(int i=0;i<3;i++){
-      if( (TTT[0][i] == TTT[1][i]) && (TTT[0][i] == TTT[2][i])){
-        winner = TTT[0][i];
-        return true;
-      }
+    /*
+        i and j indicate the position of the players choice.
+        value is the value to be changed to.
+        X = 1 O = 0
+        returns false if the spot is already chosen.
+        The view will update only if this method returns true.
+    */
+    void draw(Graphics g, int x, int j) {
+
 
     }
-    //check diagonal
-    if( (TTT[0][0] == TTT[1][1]) && (TTT[0][0] == TTT[2][2])){
-      winner = TTT[0][0];
-      return true;
+
+    // Draws the Grid. Used by the draw function as a helper method.
+    void drawGrid(Graphics g, int i, int j) {
+        g.drawRect(i, j, 300, 300);
+        for (int i1 = 0; i1 < 3; i1++) {
+            for (int j1 = 0; j1 < 3; j1++) {
+
+            }
+        }
     }
-    if( (TTT[0][2] == TTT[1][1]) && (TTT[0][2] == TTT[2][0])){
-      winner = TTT[0][2];
-      return true;
+
+    boolean mark(int i, int j, int value) {
+        if (TTT[i][j] == -1) {
+            TTT[i][j] = value;
+            return true;
+        } else {
+            return false;
+        }
     }
-    return false;
-  }
-private int winner = -1;
+
+    // returns true if every tile in the Game has been selected.
+    boolean isFull() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (TTT[i][j] == -1) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    boolean isOver() {
+        // check horizontal
+        if (isFull()) {
+            winner = -1;
+            return true;
+        }
+
+        for (int i = 0; i < 3; i++) {
+            if ((TTT[i][0] == TTT[i][1]) && (TTT[i][0] == TTT[i][2])) {
+                winner = TTT[i][0];
+                return true;
+            }
+        }
+        //check vertical
+        for (int i = 0; i < 3; i++) {
+            if ((TTT[0][i] == TTT[1][i]) && (TTT[0][i] == TTT[2][i])) {
+                winner = TTT[0][i];
+                return true;
+            }
+
+        }
+        //check diagonal
+        if ((TTT[0][0] == TTT[1][1]) && (TTT[0][0] == TTT[2][2])) {
+            winner = TTT[0][0];
+            return true;
+        }
+        if ((TTT[0][2] == TTT[1][1]) && (TTT[0][2] == TTT[2][0])) {
+            winner = TTT[0][2];
+            return true;
+        }
+        return false;
+    }
+
+    private int winner = -1;
 }

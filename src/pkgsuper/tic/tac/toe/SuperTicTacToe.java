@@ -15,7 +15,7 @@ public class SuperTicTacToe {
      *  This data is then used to determine the winner of the whole game.
     * */
     boolean isOver(){
-
+      // get status from every game. Use that info to decide if
     }
     boolean isDraw(){
 
